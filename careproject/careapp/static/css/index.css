@@ -1,0 +1,101 @@
+#image1{
+    max-width: 100%;
+    opacity: 78%;
+    
+}
+.cf1{
+    width: 0px;
+}
+/* @media (min-width: 925px) {
+    .container,.container-lg,.container-md,.container-sm,.container-xl {
+        max-width: 915px;
+    }
+} */
+.container-sm
+{
+    width: 853px;
+}
+.cc1{
+    width: 950px;
+    height: 500px;
+    position: relative;
+    left: 231px;
+    top: 0px;
+
+}
+
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12%;
+}
+.carousel-item
+{
+    height: 500px;
+}
+.txt{
+    position: absolute;
+    top: 198px;
+    left: 111px;
+    color: white;
+    
+}
+.cc1 .txt {
+    position: fixed; /* Position the background text */
+    /* bottom: -39px; */ /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 57%; /* Full width */
+    padding: 18px; /* Some padding */
+    left: 298px;
+    top: 211px;
+  }
+  #login-column
+  {
+    position: relative;
+  }
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+}
+#tt2
+{
+  position: relative;
+  border-radius: 100%;
+  bottom: 4px;
+}
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+ 
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
+.c123 {
+    bottom: 46px;
+    position: relative;
+    height: 221px;
+    }

@@ -1,0 +1,40 @@
+{% extends 'cms_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>View Activity</title>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    <table class="table table-borderless text-light" style="background-color: rgb(0,0,0,0.3);">
+        <tr>
+            <th>Activity Name</th>
+            <th>Activity Status</th>
+            <th>Duration</th>
+            <th>Care Taker</th>
+            <th>Patient</th>
+        </tr>
+        <tr>
+            <td><br></td>
+        </tr>
+        {% for i in ap %}
+        <tr>
+            <td>{{ i.aname }}</td>
+            {% if i.astatus %}
+                <td  ><p class="btn btn-success" style="width: 100px">Complete</p></td>
+            {% else %}
+                <td  ><p class="btn btn-primary" style="width: 100px"> Pending </p></td>
+            {% endif %}
+            <td>{{ i.duration }}</td>
+            <td><a href="/cms_view_cr/{{ i.c_id }}/" class="btn btn-warning">View Caretaker</a></td>
+            <td><a href="/cms_view_pt/{{ i.p_id }}/" class="btn btn-warning">View Patient</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

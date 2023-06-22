@@ -1,0 +1,52 @@
+{% extends 'patient_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Add Activity | Patient</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    <form action="" method="post" class="form" style="width: 92%;">
+        {% csrf_token %}
+        <table class="table table-borderless m-5">
+            <tr>
+                <td>
+                    <label for="">Medicine</label>
+                    <select name="mname" id="" class="form-control" >
+                        <option value="" selected disabled>Select Medicine</option>
+                        {% for i in med %}
+                            <option value="{{ i.mname }}" >{{ i.mname }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <label for="mtype">Medicine Category</label>
+                    <select name="mtype" id="medcat" class="form-control" oninput="display()">
+                        <option value="" selected disabled>Select Medicine Type</option>
+                        {% for i in med %}
+                            <option value="{{ i.mtype }}" >{{ i.mtype }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                    <label for="">Date and Time</label>
+                    <input type="time" name="time" id="" class="form-control">
+                </td>
+
+            </tr>
+            
+            <tr><td colspan="2">
+                <input type="submit" name="" value="Add Medicine" id="" class="btn btn-success form-control">
+            </td></tr>
+        </table>
+    </form>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'patient_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Check Activity | Patient</title>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    {% if act %}
+    <table class="table table-borderless m-5" style="background-color: rgb(0, 0, 0,0.3);width: 95%; ">
+        <tr class="text-light">
+            <!-- <td><h3>Activity Id</h3></td> -->
+            <th><h3>Activity Name</h3></th>
+            <th><h3>Activity Status</h3></th>
+            <th><h3>Action</h3></th>
+        </tr>
+        {% for i in act %}
+            <tr class="">
+                <!-- <td>{{i.id}}</td> -->
+                <td><b>{{i.aname}}</b></td>
+                {% if i.astatus %}
+                <td><p class="btn btn-success"> Completed </p></td>
+                {% else %}
+                <td><p class="btn btn-primary mt-2" style="height: 30px;"> Pending </p></td>
+                {% endif %}
+                <td><a href="/remove_act/{{i.id}}/" class="btn btn-danger">Remove Activity</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1 class="text-danger" >No Activities Added By You !!</h1>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

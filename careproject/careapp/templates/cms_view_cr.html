@@ -1,0 +1,44 @@
+{% extends 'cms_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>View Activity</title>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    <h1 class="text-primary">CareTaker Details</h1>
+    <div class="row container" style="width: 90%;">
+        <table class="table table-bordered m-5 text-light" style="background-color:rgba(0, 0, 0, 0.313);">
+            <tr>
+                <td colspan="4">
+                    <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Email :</h3></td>
+                <td colspan="3"><h2>{{ user.email }}</h2></td>       
+            </tr>
+            <tr>
+                <td><h3>Phone :</h3></td>
+                <td><h2>{{ user.phone }}</h2></td>
+                <td><h3>Date of Birth :</h3></td>
+                <td><h2>{{ user.d_o_b }}</h2></td>
+            </tr>
+            <tr>
+                <td colspan="1"><h3>Address :</h3></td>
+                <td colspan="3"><h2>{{ user.address }}</h2></td>
+            </tr>
+            <tr>
+                <td><h3>District :</h3></td>
+                <td colspan="3"><h2>{{ user.dist }}</h2></td>
+            </tr>
+
+        </table>
+    </div>
+    {% endblock %}
+</body>
+</html>

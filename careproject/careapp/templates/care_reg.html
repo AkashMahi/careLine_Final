@@ -1,0 +1,95 @@
+{% extends 'index_cms.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Career | CareLine</title>
+    {% endblock %}
+</head>
+<body >
+    {% block now %} <!--blocking career  -->
+    {% endblock %}
+    {% block here %}
+    <h1 class="text-primary text-center mt-3" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Let's Build a Career</h1>
+    <div class="container m-5">
+        <form method="POST" action="" class="form m-5" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table class="table">
+                {% if data %}
+                <tr>
+                    <td colspan="2" class="text-center"><h4 class="text-warning">{{data}}</h4></td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td>
+                        <label for="fname" class="form-label">First Name:</label>
+                        <input type="text" id="fname" name="fname" class="form-control" required><br>
+                    </td>
+                    <td>
+                        <label for="lname" class="form-label">Last Name:</label>
+                        <input type="text" id="lname" name="lname" class="form-control"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dateofbirth" class="form-label">Date of Birth:</label>
+                        <input type="date" id="dateofbirth" name="dateofbirth" class="form-control" required><br>
+                    </td>
+                    <td>
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required><br>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="text" id="phone" name="phone" class="form-control"><br>
+                    </td>
+                    <td>
+                        <label for="address" class="form-label">Address:</label>
+                        <textarea id="address" name="address"  class="form-control"></textarea><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="district" class="form-label">District:</label>
+                        <!-- <input type="text" id="district" name="district"  class="form-control"><br> -->
+                        <select name="district" id="" class="form-control">
+                            <option selected disabled>Choose Your District</option>
+                            {% for i in dist %}
+                            <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <label for="state" class="form-label">State:</label>
+                        <input type="text" id="state" name="state" value="Kerala" class="form-control"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="id_proof" class="form-label">Aadhar Number:</label>
+                        <input type="text" id="id_proof" name="id_proof"  class="form-control"><br>
+                    </td>
+                    <td>
+                        <label for="resume" class="form-label">Resume (JPEG Only):</label>
+                        <input type="file" id="resume" name="res" class="form-control" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">    
+                        <input type="submit" value="Register"  class="form-control btn btn-primary">
+                    </td>
+                </tr>
+            </table>   
+          </form>
+          
+        
+    </div>
+    {% endblock %}
+</body>
+</html>

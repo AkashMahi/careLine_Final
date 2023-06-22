@@ -1,0 +1,56 @@
+{% extends 'index_cms.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Support | CareLine</title>
+    {% endblock %}
+</head>
+<body>
+    {% block here %}
+   
+    <div class="container">
+        <form method="POST" action="" class="form">
+            {% csrf_token %}
+            <table class="table table-borderless">
+                <tr>
+                    <td colspan="2" class="text-center text-primary" style="font-family: 'Times New Roman', Times, serif;">
+                        <h3>Submit Your Queries</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fname">First Name:</label>
+                        <input type="text" id="fname" name="fname" required class="form-control">
+                    </td>
+                    <td>
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="lname" required class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required class="form-control" style="height: 200px;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-primary form-control">Submit</button>
+                    </td>
+                </tr>
+            </table>
+          </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

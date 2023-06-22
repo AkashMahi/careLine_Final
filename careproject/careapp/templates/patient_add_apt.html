@@ -1,0 +1,55 @@
+{% extends 'patient_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Add Activity | Patient</title>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    <form action="" method="post" class="form" style="width: 92%;">
+        {% csrf_token %}
+        <table class="table table-borderless m-5">
+            <tr>
+                <td colspan="2">
+                    <label for="apt_type">Appointment Details</label>
+                    <textarea name="apt_type" id="" cols="30" rows="10" class="form-control" placeholder="Describe the Appointment Type"></textarea>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="dr_name">Doctor Name</label>
+                    <input type="text" value="{{ user.dr_name }}" name="dr_name" id="" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="hs_name">Hospital</label>
+                    <input type="text" placeholder="Enter Hospital Name Manually" name="hs_name" id="" class="form-control">
+                </td>
+                <td>
+                    <label for="">Date and Time</label>
+                    <input type="datetime-local" name="time" id="" class="form-control">
+                </td>
+
+            </tr>
+            
+            <tr><td colspan="2">
+                <input type="submit" name="" value="Inform Caretaker" id="" class="btn btn-success form-control">
+            </td></tr>
+            <tr>
+                {% if map.dept %}
+                <td>
+                    <a href="/maps/" class="btn btn-danger">Show Map</a>
+                </td>
+                {% endif %}
+            </tr>
+        </table>
+    </form>
+    {% endblock %}
+</body>
+</html>

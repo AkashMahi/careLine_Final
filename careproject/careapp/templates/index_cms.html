@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    {% block title %}
+    <title>
+      CareLine
+    </title>
+    {% endblock %}
+  
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+    <div class="container-fluid">
+     
+      <a class="navbar-brand" id="t3" href="/" ><img src="{% static 'images/20230406_152159_0000.png' %}" alt="Logo" style="width:56px;" id="tt2" href="/"> C M S</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/abt">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sup/">Support Assistance</a>
+          </li>
+          {% block now %}
+          <li class="nav-item">
+            <a class="nav-link" href="/care_reg/">Career</a>
+          </li>
+          {% endblock %}
+          <li class="nav-item">
+            <a class="nav-link" href="/lgin/">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% block here%}
+  {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+    {% endfor %}
+  {% endif %}
+  <br>
+
+  <div class="cc1 ">
+    
+    <!-- <img src="https://ac-cdn.azureedge.net/infusionnewssiteimages/agingcare/77905e93-a0d6-430e-8634-41ed9e5e4abb.jpg" class="image-fluid" alt=""> -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://thefallshome.com/wp-content/uploads/2020/02/assisted-living-senior-caretaker-smiling.jpg" class="d-block w-100" alt="...">
+          
+          <h1 class="txt">
+            Our network  is committed to providing families with the best possible in-personal care services.<br>  
+          </h1>
+        </div>
+        <div class="carousel-item">
+          <img src="https://cdn.shortpixel.ai/spai/q_lossy+w_865+to_webp+ret_img/https://abshomecarewichita.com/wp-content/uploads/2022/09/elderly-patient-and-caregiver-P9F3N7A-scaled.jpg" class="d-block w-100" alt="...">
+          
+          <h1 class="txt">We’ll help your loved one continue to live at home, and we’ll help you find peace of mind.<br> </h1>
+        </div>
+        <div class="carousel-item">
+        
+          <img src="https://cdn8.dissolve.com/p/D2115_277_056/D2115_277_056_1200.jpg" class="d-block w-100" alt="...">
+      <h1 class="txt">
+
+        We will provide top quality care that enables 
+         your loved one to maintain their independence and dignity
+        
+      </h1>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+ {% endblock %}
+</body>
+</html>

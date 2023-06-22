@@ -1,0 +1,59 @@
+{% extends 'care_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | Caretaker</title>
+</head>
+<body>
+    {% block dash %}
+    {% if pt %}
+    <table class="table table-bordered text-light m-5" style="background-color: rgb(0, 0, 0,0.3);width: 95%;">
+        <tr>
+            <td colspan="2">Patient Name</td>
+        </tr>
+        <tr>
+            <td>{{ pt.first_name }}</td>
+            <td>{{ pt.last_name }}</td>
+        </tr>
+        <tr>
+            <td>Appointment Details</td>
+            <td>{{ apt.apname }}</td>
+        </tr>
+        <tr>
+            <td>Appointment Time</td>
+            <td>{{ apt.aptime }}</td>
+        </tr>        
+        <tr>
+            <td>Doctor Name</td>
+            <td>{{ apt.dr_name }}</td>
+        </tr>
+        <tr>
+            <td>Hospital Name</td>
+            <td>{{ apt.h_name }}</td>
+        </tr>
+        <tr>
+            {%if apt.status%}
+                <td colspan="2" class="text-center">
+                    <a href="/appointment_delete/{{ apt.id }}/" class="btn btn-danger">Delete Completed Visit</a>
+                </td>
+            {% else %}
+                <td colspan="2" class="text-center">
+                    <a href="/appointment_complete/{{ apt.id }}/" class="btn btn-primary">Hospital Visit Completed</a>
+                </td>
+            {% endif %}
+
+        </tr>
+        <tr>
+            <td>
+                <a href="/cr_depart/{{ apt.id }}/" class="btn btn-primary">Visit Hospital</a>
+            </td>
+        </tr>
+    </table>
+    {% else %}
+    <h1 class="text-danger">No Appointments Available !!</h1>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

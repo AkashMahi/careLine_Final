@@ -1,0 +1,34 @@
+{% extends 'care_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | Caretaker</title>
+</head>
+<body>
+    {% block dash %}
+    {% if med %}
+        <table class="table table-borderless">
+            <tr>
+                <td><h2>Patient Name: {{ pt.first_name }} {{pt.last_name}}</h2></td>
+            </tr>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Medicine Category</th>
+                <th>Time of Consumption</th>
+            </tr>
+            {% for i in med %}
+            <tr>
+                <td>{{i.m_name}}</td>
+                <td>{{i.m_cat}}</td>
+                <td>{{i.cons_time}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1 class="text-danger">No Medicine Listed !!</h1>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

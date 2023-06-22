@@ -1,0 +1,69 @@
+{% extends 'index_cms.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+
+    <title>Login | CareLine</title>
+    {% endblock %}
+</head>
+<body>
+    
+        {% block here %}
+        <div class="row container">
+            <div class=" col">
+            <h2 class="m-5">Login</h2>
+            <form method="post" action="" class=" m-5 ">
+                {% csrf_token %}
+                    <table class="table table-borderless">
+                        {%if messages%}
+                        {% for msg in messages %}
+                        <tr>
+                            <td class="alert alert-{{msg}} text-danger">{{ msg }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+                        <tr>
+                            <td>
+                                <div class="form-group" >
+                                    <label for="username">Username:</label>
+                                    <input type="text" name="username" id="username" class="form-control"><br>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" name="password" id="password" class="form-control"><br>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="text-center">
+                                    <input type="submit" value="Login" class="btn btn-primary">
+                                    <div class="form-group">
+                                        <a href="/client_reg/" style="text-decoration: none;">Sign Up | New User </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+            </form>
+            </div>
+            <div class="col">
+          <img src="https://thefallshome.com/wp-content/uploads/2020/02/assisted-living-senior-caretaker-smiling.jpg" class="d-block w-100" alt="...">
+
+            </div>
+        </div>
+        </div>
+        {% endblock %}
+
+    
+</body>
+</html>

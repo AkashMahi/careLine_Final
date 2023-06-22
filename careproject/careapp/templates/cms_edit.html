@@ -1,0 +1,36 @@
+{% extends 'cms_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Edit Profile</title>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    <div class="container">
+        <table class="table table-hover text-light bg-transparent table-borderless">
+            <form action="" method="post" class="form m-5">
+                {% csrf_token %}
+                <tr>
+                    <td><label for="phone">Phone Number</label></td>
+                    <td><input type="text" name="phone" id="" class="form-control" value="{{ data.phone }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="adress">Address</label></td>
+                    <td><textarea name="address" id="" cols="30" rows="10" class="form-control">{{ data.address }}</textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center"><input type="submit" value="Update" class="btn btn-success"></td>
+                </tr>
+        
+        
+            </form>
+            </table>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>

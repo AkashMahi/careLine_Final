@@ -1,0 +1,36 @@
+{% extends 'cms_dash.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Careline | Messages</title>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+        {% for i in msg %}
+        <tr>
+            <td>{{ i.fname }} {{ i.lname }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.message }}</td>
+            <td>
+                <a href="/rejectmsg/{{i.id}}/" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

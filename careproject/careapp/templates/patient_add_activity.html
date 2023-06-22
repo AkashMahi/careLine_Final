@@ -1,0 +1,51 @@
+{% extends 'patient_dash.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Add Activity | Patient</title>
+    {% endblock %}
+</head>
+<body>
+    {% block dash %}
+    <form action="" method="post" class="form" style="width: 92%;">
+        {% csrf_token %}
+        <table class="table table-borderless m-5">
+            <tr>
+                <td><h2>Hello {{ user.first_name }} Let us add an activity</h2></td>    
+            </tr>
+            <tr>
+                <td>
+                    <select name="act_name" id="" class="form-control">
+                        <option value="" selected disabled>Choose Activity</option>
+                        {% for i in act %}
+                            <option value="{{i}}">{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                
+            </tr>
+            <tr>
+                <td><label for="duration"><b>Duration :</b></label></td>
+            </tr>
+            <tr>
+                <!-- <td><input type="number" name="duration" id="" class="form-control" placeholder="Enter Duration in Minutes"></td> -->
+                <td><select name="duration" id="" class="form-control">
+                    <option selected disabled>Choose Duration in Minutes</option>
+                    <option value="10">10 Minutes</option>
+                    <option value="15">15 Minutes</option>
+                    <option value="20">20 Minutes</option>
+                    <option value="30">30 Minutes</option>
+                    <option value="60">60 Minutes</option>
+                </select></td>
+            </tr>
+            <tr><td>
+                <input type="submit" name="" value="Add Activity" id="" class="btn btn-success form-control">
+            </td></tr>
+        </table>
+    </form>
+    {% endblock %}
+</body>
+</html>
